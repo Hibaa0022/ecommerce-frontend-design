@@ -1,0 +1,374 @@
+/* --- CSS Variables & Layout Wrapper --- */
+:root {
+    --brand-blue: #007bff; /* Primary blue color for buttons and accents */
+    --light-gray: #f7f7f7;
+    --text-color: #333;
+    --secondary-nav-height: 48px;
+    --page-padding: 40px; /* Padding on the left and right of the 1440px container */
+}
+
+html{
+    height: 100%;
+}
+
+body {
+    background-color: var(--light-gray);
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+#page-wrapper {
+    width: 1440px; /* Enforces the main design width */
+    background-color: white;
+}
+
+* {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.header-action-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px var(--page-padding); /* 20px top/bottom, 40px left/right */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--brand-blue);
+    margin-right: 20px;
+}
+
+.logo i {
+    font-size: 1.2em;
+    margin-right: 5px;
+    color: white;
+    background-color: var(--brand-blue);
+    padding: 5px 6px; /* Adjusted padding to look more square/rounded */
+    border-radius: 6px;
+}
+
+.category-label {
+    display: flex;
+    align-items: center; /* Vertically centers the icon and text */
+    justify-content: center;
+    background-color: white;
+    color: #333; 
+    font-size: 0.9em;
+    font-weight: 500;
+    padding: 0 15px; 
+    white-space: nowrap; 
+    cursor: pointer;
+    height: 100%; /* Ensures it fills the 40px container height */
+
+    /* Separating Borders */
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.category-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;     /* SPACE BETWEEN TEXT + ICON */
+    padding: 0 15px;
+    background-color: white;
+    height: 40px;
+    border-left: 1px solid #ccc;
+}
+
+.category-icon-img {
+    width: 14px ;
+    height: 14px;
+    display: block;
+}
+
+
+.category-label i {
+    /*:Pushes the text away from the icon */
+    margin-right: 8px; 
+    font-size: 1.1em; 
+    gap: 8px;
+    display: flex;
+    align-items: center;
+    color: var(--text-color); /* Usually #333 */
+}
+
+
+
+.search-container {
+    display: flex;
+    border: 2px solid var(--brand-blue);
+    border-radius: 6px;
+    overflow: hidden;
+    flex-basis: 850px; 
+    height: 40px;
+}
+
+
+
+.search-container input {
+    border: 1px solid var(--brand-blue);
+    padding: 0 15px;
+    flex-grow: 1;
+    font-size: 1em;
+    outline: none;
+    background-color: white;
+
+}
+
+.category-select {
+    border: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    border-left: 1px solid #ccc;
+    padding: 0 10px;
+    padding-right: 50px;
+    background-color: white;
+    font-size: 0.9em;
+    cursor: pointer;
+    appearance: none; 
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 25px; /* Make space for the custom arrow */
+    color: #666;
+}
+
+.search-btn {
+    background-color: var(--brand-blue);
+    color: white;
+    padding: 0 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+
+.user-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    font-size: 0.75em;
+    padding: 5px;
+}
+
+.action-item i {
+    font-size: 1.4em;
+    margin-bottom: 2px;
+}
+
+.action-item:hover {
+    color: var(--brand-blue);
+}
+
+
+.header-secondary-nav {
+    height: var(--secondary-nav-height); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--page-padding);
+    border-top: 1px solid #eee; /* Separates from the action bar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle separation from page content */
+}
+
+.secondary-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-item {
+    padding: 5px 0;
+    color: var(--text-color);
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.nav-item i {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+.nav-item:hover {
+    color: var(--brand-blue);
+}
+
+
+    
+
+
+.header-info-actions {
+    display: flex;
+    gap: 20px;
+    font-size: 0.9em;
+    color: #333;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.flag-icon-img{
+    width: 20px;
+    height: 15px;
+
+    margin-left: 5px;
+    margin-right: 5px;
+
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+.info-item i {
+    margin-left: 5px;
+    font-size: 0.8em;
+    color: #666;
+}
+
+.flag-icon {
+    font-size: 1.2em;
+    margin-left: 5px;
+}
+
+
+footer {
+    width: 100%;
+    background-color: white;
+    font-size: 0.9em;
+    color: var(--text-color); /* Uses your global text color variable */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; 
+    /* Use your global padding variable */
+    padding: 40px var(--page-padding); 
+    border-bottom: 1px solid #eee;
+}
+
+.footer-brand {
+    /* Allow the brand column to be wider */
+    flex-basis: 25%; 
+    max-width: 300px;
+    padding-right: 20px;
+}
+
+.footer-brand h2 {
+    /* Replicate the blue-bag logo style */
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--brand-blue);
+    margin-bottom: 10px;
+}
+
+.footer-brand h2::before {
+    content: '\f290'; /* Font Awesome shopping bag icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 1.2em;
+    margin-right: 5px;
+    color: white;
+    background-color: var(--brand-blue);
+    padding: 4px 5px;
+    border-radius: 6px;
+}
+
+.footer-section {
+    flex-basis: 15%; 
+    padding-right: 20px; 
+}
+
+.footer-section h3 {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    color: #666;
+    text-indent: -9999px; 
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section li {
+    margin-bottom: 8px;
+}
+
+.footer-section a {
+    color: #666;
+}
+
+.footer-section img {
+    display: block;
+    margin-bottom: 10px;
+    width: 140px; /* Standard width for app store buttons */
+    height: auto;
+    border-radius: 6px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px var(--page-padding);
+    background-color: var(--light-gray); 
+    color: #666;
+}
+
+.footer-bottom p:last-child {
+    display: flex;
+    align-items: center;
+}
+
+.footer-bottom p:last-child::before {
+    width: 20px;
+    height: 14px;
+    margin-right: 8px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
